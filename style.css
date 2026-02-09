@@ -12,29 +12,27 @@ body {
   text-align: center;
 }
 
-h1 {
-  color: white;
-  font-size: 2.8rem;
-}
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2rem;
+  }
 
-#buttons {
-  margin-top: 40px;
-  position: relative; /* 🔥 ОБЯЗАТЕЛЬНО */
-  width: 300px;
-  height: 120px;
-}
+  #buttons {
+    width: 260px;
+    height: 140px;
+  }
 
-button {
-  font-size: 1.2rem;
-  padding: 15px 30px;
-  border: none;
-  border-radius: 30px;
-  cursor: pointer;
+  button {
+    font-size: 1.1rem;
+    padding: 12px 24px;
+  }
 }
 
 #yesBtn {
   background: #ff2d55;
   color: white;
+  position: relative;
+  z-index: 2;
 }
 
 #noBtn {
@@ -42,4 +40,5 @@ button {
   color: #ff2d55;
   position: absolute;
   right: 0;
+  z-index: 1;
 }

@@ -6,6 +6,7 @@ const yesBtn = document.getElementById("yesBtn");
 console.log("noBtn:", noBtn);
 console.log("yesBtn:", yesBtn);
 
+
 noBtn.addEventListener("mouseenter", () => {
   console.log("NO BUTTON HOVER");
 
@@ -16,9 +17,28 @@ noBtn.addEventListener("mouseenter", () => {
   const x = Math.random() * maxX;
   const y = Math.random() * maxY;
 
+  noBtn.style.transition = "0.15s";
   noBtn.style.left = `${x}px`;
   noBtn.style.top = `${y}px`;
 });
+
+const moveNoButton = () => {
+  const parent = noBtn.parentElement;
+  const maxX = parent.clientWidth - noBtn.offsetWidth;
+  const maxY = parent.clientHeight - noBtn.offsetHeight;
+
+  const x = Math.random() * maxX;
+  const y = Math.random() * maxY;
+
+  noBtn.style.left = `${x}px`;
+  noBtn.style.top = `${y}px`;
+};
+
+// ПК
+noBtn.addEventListener("mouseenter", moveNoButton);
+
+// Телефон
+noBtn.addEventListener("touchstart", moveNoButton);
 
 yesBtn.addEventListener("click", () => {
   alert("Ты моя валентинка ❤️");
