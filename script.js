@@ -1,19 +1,31 @@
-const noBtn = document.getElementById("noBtn");
-const yesBtn = document.getElementById("yesBtn");
+document.addEventListener("DOMContentLoaded", () => {
+  const noBtn = document.getElementById("noBtn");
+  const yesBtn = document.getElementById("yesBtn");
 
-const questionScreen = document.getElementById("questionScreen");
-const loveScreen = document.getElementById("loveScreen");
+  const questionScreen = document.getElementById("questionScreen");
+  const loveScreen = document.getElementById("loveScreen");
 
-noBtn.addEventListener("mouseenter", () => {
-  const x = Math.random() * (window.innerWidth - 100);
-  const y = Math.random() * (window.innerHeight - 50);
-  noBtn.style.left = `${x}px`;
-  noBtn.style.top = `${y}px`;
-});
+  if (!noBtn || !yesBtn) {
+    console.error("Кнопки не найдены");
+    return;
+  }
 
-yesBtn.addEventListener("click", () => {
-  questionScreen.classList.remove("active");
-  setTimeout(() => {
-    loveScreen.classList.add("active");
-  }, 500);
+  noBtn.addEventListener("mouseenter", () => {
+    const parent = noBtn.parentElement;
+    const maxX = parent.clientWidth - noBtn.offsetWidth;
+    const maxY = parent.clientHeight - noBtn.offsetHeight;
+
+    const x = Math.random() * maxX;
+    const y = Math.random() * maxY;
+
+    noBtn.style.left = `${x}px`;
+    noBtn.style.top = `${y}px`;
+  });
+
+  yesBtn.addEventListener("click", () => {
+    questionScreen.classList.remove("active");
+    setTimeout(() => {
+      loveScreen.classList.add("active");
+    }, 300);
+  });
 });

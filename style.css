@@ -18,7 +18,7 @@ body {
   text-align: center;
   opacity: 0;
   transform: scale(0.9);
-  transition: 0.8s ease;
+  transition: all 0.8s ease;
 }
 
 .screen.active {
@@ -29,55 +29,32 @@ body {
 h1 {
   color: #fff;
   font-size: 3rem;
-  text-shadow: 0 5px 15px rgba(0,0,0,0.3);
-}
-
-h1 span {
-  color: #ff2d55;
-}
-
-p {
-  color: #fff;
-  font-size: 1.5rem;
 }
 
 .buttons {
   margin-top: 40px;
+  position: relative; /* 🔥 ОБЯЗАТЕЛЬНО */
+  width: 300px;
+  height: 120px;
 }
 
 button {
-  font-size: 1.3rem;
-  padding: 15px 35px;
-  margin: 15px;
+  font-size: 1.2rem;
+  padding: 15px 30px;
+  border-radius: 30px;
   border: none;
-  border-radius: 50px;
   cursor: pointer;
-  transition: 0.3s;
+  transition: transform 0.2s;
 }
 
 #yesBtn {
   background: #ff2d55;
-  color: white;
-}
-
-#yesBtn:hover {
-  transform: scale(1.1);
+  color: #fff;
 }
 
 #noBtn {
-  background: white;
+  background: #fff;
   color: #ff2d55;
   position: absolute;
-}
-
-.photo img {
-  width: 280px;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-  margin-top: 20px;
-}
-
-.gif {
-  width: 200px;
-  margin-top: 20px;
+  right: 0;
 }
