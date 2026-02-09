@@ -1,45 +1,24 @@
 console.log("SCRIPT LOADED");
 
-const noBtn = document.getElementById("noBtn");
 const yesBtn = document.getElementById("yesBtn");
+const noBtn = document.getElementById("noBtn");
 
-console.log("noBtn:", noBtn);
-console.log("yesBtn:", yesBtn);
+const questionScreen = document.getElementById("questionScreen");
+const loveScreen = document.getElementById("loveScreen");
 
+let scale = 1;
 
-noBtn.addEventListener("mouseenter", () => {
-  console.log("NO BUTTON HOVER");
-
-  const parent = noBtn.parentElement;
-  const maxX = parent.clientWidth - noBtn.offsetWidth;
-  const maxY = parent.clientHeight - noBtn.offsetHeight;
-
-  const x = Math.random() * maxX;
-  const y = Math.random() * maxY;
-
-  noBtn.style.transition = "0.15s";
-  noBtn.style.left = `${x}px`;
-  noBtn.style.top = `${y}px`;
+// ❌ НЕТ — увеличиваем ДА
+noBtn.addEventListener("click", () => {
+  scale += 0.2;
+  yesBtn.style.transform = `scale(${scale})`;
 });
 
-const moveNoButton = () => {
-  const parent = noBtn.parentElement;
-  const maxX = parent.clientWidth - noBtn.offsetWidth;
-  const maxY = parent.clientHeight - noBtn.offsetHeight;
-
-  const x = Math.random() * maxX;
-  const y = Math.random() * maxY;
-
-  noBtn.style.left = `${x}px`;
-  noBtn.style.top = `${y}px`;
-};
-
-// ПК
-noBtn.addEventListener("mouseenter", moveNoButton);
-
-// Телефон
-noBtn.addEventListener("touchstart", moveNoButton);
-
+// ❤️ ДА — меняем экран
 yesBtn.addEventListener("click", () => {
-  alert("Ты моя валентинка ❤️");
+  questionScreen.classList.remove("active");
+
+  setTimeout(() => {
+    loveScreen.classList.add("active");
+  }, 300);
 });
