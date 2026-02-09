@@ -1,37 +1,23 @@
-* {
-  box-sizing: border-box;
-}
-
 body {
   margin: 0;
   height: 100vh;
   background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-  font-family: 'Segoe UI', sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
+  font-family: Arial, sans-serif;
 }
 
-.screen {
-  position: absolute;
+#container {
   text-align: center;
-  opacity: 0;
-  transform: scale(0.9);
-  transition: all 0.8s ease;
-}
-
-.screen.active {
-  opacity: 1;
-  transform: scale(1);
 }
 
 h1 {
-  color: #fff;
-  font-size: 3rem;
+  color: white;
+  font-size: 2.8rem;
 }
 
-.buttons {
+#buttons {
   margin-top: 40px;
   position: relative; /* 🔥 ОБЯЗАТЕЛЬНО */
   width: 300px;
@@ -41,19 +27,18 @@ h1 {
 button {
   font-size: 1.2rem;
   padding: 15px 30px;
-  border-radius: 30px;
   border: none;
+  border-radius: 30px;
   cursor: pointer;
-  transition: transform 0.2s;
 }
 
 #yesBtn {
   background: #ff2d55;
-  color: #fff;
+  color: white;
 }
 
 #noBtn {
-  background: #fff;
+  background: white;
   color: #ff2d55;
   position: absolute;
   right: 0;
